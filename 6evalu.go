@@ -10,9 +10,10 @@ import (
 func main() {
 
 	args := os.Args
-	fileName := 
+	fileName := os.Args[1]
 	var nowTime, fileTime int64;
 
+	mt.Println (fileName):
 	//  Get current time in seconds since epoch 
 	now := time.Now();
 	nowTime = now.Unix();
