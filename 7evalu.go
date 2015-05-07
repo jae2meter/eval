@@ -15,7 +15,7 @@ func main() {
 	var nowTime, maxDiffTime, fileTime int64;
 
 	// Get command line arguments
-	fmt.Println(len(os.Args), os.Args)
+	// fmt.Println(len(os.Args), os.Args)
 
 	if (os.Args[0] == 1) {
 		log.Fatal(err)
@@ -36,6 +36,7 @@ func main() {
 		log.Fatal(err)
 	}
 
+	// If time diff is larger than command line argument then return 1 
 	fileTime = info.ModTime().Unix(); // fmt.Println(info.ModTime().Unix());
 	if (nowTime-fileTime) > maxDiffTime {
 		fmt.Printf("Diff is big %d\n", (nowTime-fileTime));
