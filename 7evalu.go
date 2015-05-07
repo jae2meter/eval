@@ -1,7 +1,8 @@
+
 package main
 
 import (
-	"fmt"
+	//"fmt"
 	"time"
 	"log"
 	"os"
@@ -17,7 +18,7 @@ func main() {
 	// Get command line arguments
 	// fmt.Println(len(os.Args), os.Args)
 
-	if (os.Args[0] == 1) {
+	if (len (os.Args) != 3) {
 		log.Fatal(err)
 	}
 	fileName = os.Args[1];
@@ -39,7 +40,7 @@ func main() {
 	// If time diff is larger than command line argument then return 1 
 	fileTime = info.ModTime().Unix(); // fmt.Println(info.ModTime().Unix());
 	if (nowTime-fileTime) > maxDiffTime {
-		fmt.Printf("Diff is big %d\n", (nowTime-fileTime));
+		// fmt.Printf("Diff is big %d\n", (nowTime-fileTime));
 		os.Exit (1)
 	}
 	os.Exit (0)
